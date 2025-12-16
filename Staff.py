@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.filedialog import asksaveasfile,askopenfile
 import tkinter as tk
 from PIL import Image,ImageTk
-from tkcalendar import Calendar
+from tkcalendar import Calendar as cal
 import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
@@ -139,6 +139,9 @@ def upload():
     
     
 down=True
+var=StringVar()
+cal=cal(window,selectmode="day",year=2021,month=9,day=16)
+
 def down():
     global down
     if down:

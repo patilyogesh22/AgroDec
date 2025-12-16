@@ -3,8 +3,10 @@ from tkinter import filedialog
 import numpy as np
 import cv2
 from PIL import Image
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+from keras.preprocessing import image
+from keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 # Load the pre-trained machine learning model
 model = ResNet50(weights='imagenet')

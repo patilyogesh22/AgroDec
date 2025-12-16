@@ -1,6 +1,5 @@
 import mysql.connector
 from PIL import Image, ImageDraw, ImageFont
-import barcode
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog
@@ -22,7 +21,7 @@ mysql_details = {
     'host': 'localhost',
     'user': 'root',
     'password': 'root',
-    'database': 'medicaps'
+    'database': 'agrodec'
 }
 
 def get_student_data(Enroll):
@@ -91,8 +90,8 @@ def generate_pass(student_data,Enroll):
     
 def send_mail(target_email,photo_attachment):
     # login credentials
-    email = "narayanbhadaniya14@gmail.com"
-    password = "hjwn kkag mzlv eojk"
+    email = "yogeshpatil22@gmail.com"
+    password = "Great@12345"
 
     # target email address
     #target_email = "darkknightrise2023@gmail.com"

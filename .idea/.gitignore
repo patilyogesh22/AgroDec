@@ -1,5 +1,7 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/Profile
-
+Profile
+/oauth.py
+/client_secret.json
+config.ini

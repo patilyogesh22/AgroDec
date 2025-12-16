@@ -1,4 +1,5 @@
 from PIL import Image, ImageTk, ImageOps
+from tkinter import Label
 
 with Image.open("Image/file.png") as img:
     img = img.resize((200, 200))

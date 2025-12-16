@@ -8,8 +8,8 @@ from email import encoders
 
 def send_mail():
     # login credentials
-    email = "narayanbhadaniya14@gmail.com"
-    password = "hjwn kkag mzlv eojk"
+    email = "yogeshpatil22@gmail.com"
+    password = "Great@12345"
 
     # target email address
     target_email = "darkknightrise2023@gmail.com"

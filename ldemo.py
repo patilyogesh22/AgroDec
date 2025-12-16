@@ -1,4 +1,4 @@
-'''import tkinter as tk
+'''\import tkinter as tk
 import mysql.connector
 from tkinter import messagebox
 
@@ -68,7 +68,7 @@ class Dashboard(tk.Tk):
     def logout(self):
         # Logout the user and redirect to the login page
         self.destroy()
-        login_function()
+        login()
 
 if __name__ == "__main__":
     # Call the login function to get the username of the logged-in user

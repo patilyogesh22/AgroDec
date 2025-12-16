@@ -14,15 +14,13 @@ import cv2
 from os import listdir
 from sklearn.preprocessing import LabelBinarizer
 #from tensorflow.keras.layers import MaxPooling2D
-from keras.layers.core import Activation, Flatten, Dropout, Dense
+from keras.layers import Activation, Flatten, Dropout, Dense, BatchNormalization, Conv2D, MaxPooling2D
 from keras import backend as K
-from keras.preprocessing.image import ImageDataGenerator
+from keras.preprocessing.image import ImageDataGenerator, img_to_array
 from keras.optimizers import Adam
 from keras.preprocessing import image
-from tensorflow.keras.preprocessing.image import img_to_array
 from keras.models import Sequential
-from tensorflow.compat.v1.keras.layers import BatchNormalization
-from keras.layers.convolutional import Conv2D
+from PIL import Image
 import matplotlib.pyplot as plt
 
 width=256
@@ -84,6 +82,7 @@ image_labels = label_binarizer.fit_transform(label_list)
 pickle.dump(label_binarizer,open('label_transform.pkl', 'wb'))
 n_classes = len(label_binarizer.classes_)
 
+np_image_list = np.array(image_list, dtype=np.float32) / 225.0
 
 print(label_binarizer.classes_)
 train_x, test_x, train_y, test_y = train_test_split(np_image_list, image_labels, test_size=0.5, random_state = 75)
@@ -134,9 +133,9 @@ opt = Adam(lr=INIT_LR, decay=INIT_LR / epoch_)
 model.compile(loss="binary_crossentropy", optimizer=opt,metrics=["accuracy"])
 
 history = model.fit_generator(
-    aug.flow(x_train, y_train, batch_size=BS),
-    validation_data=(x_test, y_test),
-    steps_per_epoch=len(x_train) // BS,
+    aug.flow(train_x, train_y, batch_size=BS),
+    validation_data=(test_x, test_y),
+    steps_per_epoch=len(train_x) // BS,
     epochs=epoch_, verbose=1
     )
 
