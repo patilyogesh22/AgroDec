@@ -18,3 +18,37 @@ __pycache__/
 
 # Logs
 *.log
+# Default ignored files
+/shelf/
+/workspace.xml
+Profile
+/oauth.py
+/client_secret.json
+config.ini
+__pycache__/
+.idea/
+token.json      
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE files
+.idea/
+.vscode/
+
+# Virtual environments
+Django/
+venv/
+.env/
+
+# OAuth & secrets
+client_secret.json
+token.json
+config.ini
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
