@@ -1,23 +1,4 @@
-# Secrets & credentials
-client_secret.json
-token.json
-config.ini
 
-# Virtual environments
-Django/
-venv/
-.env/
-
-# Python cache
-__pycache__/
-*.pyc
-
-# IDE files
-.idea/
-.vscode/
-
-# Logs
-*.log
 # Default ignored files
 /shelf/
 /workspace.xml
